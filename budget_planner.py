@@ -1,6 +1,12 @@
 import tkinter as tk
 from tkinter import simpledialog
+from reportlab.platypus import SimpleDocTemplate,Table, TableStyles
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import color 
 
+def generate_pdf():
+    #Create pdf after user enters expense
+    doc = SimpleDocTemplate("Budget_Planner.pdf")
 
 def budget_planner():
 
