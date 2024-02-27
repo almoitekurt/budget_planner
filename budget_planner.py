@@ -3,7 +3,7 @@ from tkinter import simpledialog
 from reportlab.platypus import SimpleDocTemplate,Table, TableStyles
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import color 
-from reportlab.lib.pagesizes import letter
+
 
 def generate_pdf():
     #Create pdf after user enters expense
