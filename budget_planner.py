@@ -7,12 +7,14 @@ from reportlab.lib.styles import color
 
 def generate_pdf(budget, expenses, total_expenses):
     #Create pdf after user enters expense
-    doc = SimpleDocTemplate("Budget_Planner.pdf" pagesizes= letter) 
+    doc = SimpleDocTemplate("Budget_Planner.pdf" , pagesizes= letter) 
     store_data = []
 
     #Prepare table for data
     data = [["Category", "Amount"]] 
-    data.extend([[category, f"${amount:.2f}"] for category,amount in expense.items()])
+    data.extend([[category, f"${amount:.2f}"] for category,amount in expenses.items()])
+    data.appened([["Total Expenses", f"${total_expenses:.2f}"]])
+    data.appened([["Budget", f"${budget - total_expenses:.2f}"]]) #remaining budget 
  
     #Create table for Budget and Expense
     
@@ -26,7 +28,7 @@ def budget_planner():
 
     #Collect expense from user
     while True:
-        category = simpledialog.askstring("Input", "Enter the expense or 'done' to finish:",)
+        category = simpledialog.askstring("Input", "Enter the expense or 'done' to finish:")
         if category == 'done':
             break
     amount = float
