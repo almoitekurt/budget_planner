@@ -1,9 +1,8 @@
 import tkinter as tk
 from tkinter import simpledialog
-from reportlab.platypus import SimpleDocTemplate,Table, TableStyles
+from reportlab.platypus import SimpleDocTemplate,Table, TableStyle
 from reportlab.lib.pagesizes import letter
-from reportlab.lib.styles import color 
-
+from reportlab.lib.styles import colors 
 
 def generate_pdf(budget, expenses, total_expenses):
     #Create pdf after user enters expense
@@ -17,6 +16,14 @@ def generate_pdf(budget, expenses, total_expenses):
     data.appened([["Budget", f"${budget - total_expenses:.2f}"]]) #remaining budget 
  
     #Create table for Budget and Expense
+    t = Table(data, columns = [200,150], repeatRows=1)
+    t.setStyleTable(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.darkred),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+
+    ])
+                    )
+
     
 
 def budget_planner():
