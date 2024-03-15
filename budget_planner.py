@@ -49,7 +49,7 @@ def budget_planner():
         total_expenses += amount
 
     generate_pdf(budget, expenses,total_expenses)
-    tk.messagebox.showinfo("INFO", "Budget planner PDF!")
+    tk.messagebox.showinfo("INFO", "Budget planner PDF has been created")
 
 if __name__ == '__main__':
     budget_planner()

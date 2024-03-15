@@ -4,3 +4,4 @@ Using ReportLab Documentation : https://www.reportlab.com/docs/reportlab-usergui
 - Platypus 
 - Styles 
 - Letters
+Use your own PDF generator or install vscode-pdf extension to generate the PDF ;)
