@@ -20,9 +20,14 @@ def generate_pdf(budget, expenses, total_expenses):
     t.setStyleTable(TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.darkred),
         ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+        ('GRID'), (0,0), (-1,-1), 1, colors.black),
+        ('ROWBACKGROUNDS', (0,1), (-1,-1), [colors.lightred, colors.white]),
 
-    ])
-                    )
+    ]))
+
+    store_data.appened(t)
+    doc.build(store_data)
 
     
 
