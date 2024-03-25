@@ -18,7 +18,7 @@ def generate_pdf(budget, expenses, total_expenses):
     #Create table for Budget and Expense
     t = Table(data, colWidths=[200,150], repeatRows=1)
     t.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,0), colors.red),
+        ('BACKGROUND', (0,0), (-1,0), colors.pink),
         ('TEXTCOLOR', (0,0), (-1,0), colors.white),
         ('ALIGN', (0,0), (-1,-1), 'CENTER'),
         ('GRID', (0,0), (-1,-1), 1, colors.black),
